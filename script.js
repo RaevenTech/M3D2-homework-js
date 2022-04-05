@@ -63,20 +63,20 @@ fetch(" https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica")
         }
     });
 
-fetch(" https://striveschool-api.herokuapp.com/api/deezer/search?q=behemoth")
+fetch(" https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
     .then((response) => response.json())
     .then((response) => {
         console.log(response.data[0].duration);
 
-        const divBehemoth = document.getElementById("behemoth");
+        const divQueen = document.getElementById("queen");
 
         for (let i = 0; i < response.data.length; i++) {
-            let newColBehemoth = document.createElement("div");
-            newColBehemoth.classList.add("col-sm-3");
+            let newColQueen = document.createElement("div");
+            newColQueen.classList.add("col-sm-3");
 
-            console.log(newColBehemoth);
+            console.log(newColQueen);
 
-            newColBehemoth.innerHTML = `<div class="card">
+            newColQueen.innerHTML = `<div class="card">
                     <img src="${
                         response.data[i].album.cover
                     }" class="card-img-top" alt="...">
@@ -91,6 +91,6 @@ fetch(" https://striveschool-api.herokuapp.com/api/deezer/search?q=behemoth")
                     </div>
                   </div>
                     `;
-            divBehemoth.appendChild(newColBehemoth);
+            divQueen.appendChild(newColQueen);
         }
     });
