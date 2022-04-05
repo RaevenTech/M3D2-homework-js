@@ -1,12 +1,12 @@
-fetch(
-    "https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem",
-    options
-)
+/*
+ */
+
+fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem")
     .then((response) => response.json())
     .then((response) => {
         console.log(response.data[0].duration);
 
-        const divEminem = document.querySelector("eminem");
+        const divEminem = document.getElementById("eminem");
 
         for (let i = 0; i < response.data.length; i++) {
             let newColEminem = document.createElement("div");
@@ -14,9 +14,9 @@ fetch(
 
             console.log(newColEminem);
 
-            newColEminem.innerHTML = `<div class="card"">
+            newColEminem.innerHTML = `<div class="card">
             <img src="${
-                songs.data[i].album.cover
+                response.data[i].album.cover
             }" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">${response.data[i].title}</h5>
@@ -31,10 +31,7 @@ fetch(
         }
     });
 
-fetch(
-    " https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica",
-    options
-)
+fetch(" https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica")
     .then((response) => response.json())
     .then((response) => {
         console.log(response.data[0].duration);
@@ -47,7 +44,7 @@ fetch(
 
             console.log(newColMetallica);
 
-            newColMetallica.innerHTML = `<div class="card"">
+            newColMetallica.innerHTML = `<div class="card">
                 <img src="${
                     response.data[i].album.cover
                 }" class="card-img-top" alt="...">
@@ -66,10 +63,7 @@ fetch(
         }
     });
 
-fetch(
-    " https://striveschool-api.herokuapp.com/api/deezer/search?q=behemoth",
-    options
-)
+fetch(" https://striveschool-api.herokuapp.com/api/deezer/search?q=behemoth")
     .then((response) => response.json())
     .then((response) => {
         console.log(response.data[0].duration);
@@ -82,7 +76,7 @@ fetch(
 
             console.log(newColBehemoth);
 
-            newColBehemoth.innerHTML = `<div class="card"">
+            newColBehemoth.innerHTML = `<div class="card">
                     <img src="${
                         response.data[i].album.cover
                     }" class="card-img-top" alt="...">
@@ -100,5 +94,3 @@ fetch(
             divBehemoth.appendChild(newColBehemoth);
         }
     });
-
-/*             .catch(err => console.error(err)); */
