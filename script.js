@@ -21,13 +21,9 @@ fetch(
             <div class="card-body">
               <h5 class="card-title">${response.data[i].title}</h5>
               <p class="card-text">${
-                  "This album has a duration of: " +
-                  response.data[i].duration +
-                  " min"
+                  "Duration: " + response.data[i].duration + " min"
               }</p>
-              <a href="${
-                  response.data[i].link
-              }" class="btn btn-primary">LISTEN</a>
+              <a href="${response.data[i].link}" class="btn btn-dark">LISTEN</a>
             </div>
           </div>
             `;
@@ -58,13 +54,11 @@ fetch(
                 <div class="card-body">
                   <h5 class="card-title">${response.data[i].title}</h5>
                   <p class="card-text">${
-                      "This album has a duration of: " +
-                      response.data[i].duration +
-                      " min"
+                      "Duration: " + response.data[i].duration + " min"
                   }</p>
                   <a href="${
                       response.data[i].link
-                  }" class="btn btn-primary">LISTEN</a>
+                  }" class="btn btn-dark">LISTEN</a>
                 </div>
               </div>
                 `;
@@ -77,12 +71,12 @@ fetch(
     options
 )
     .then((response) => response.json())
-    .then((responce) => {
-        console.log(responce.data[0].duration);
+    .then((response) => {
+        console.log(response.data[0].duration);
 
-        let divBehemoth = document.getElementById("behemoth");
+        const divBehemoth = document.getElementById("behemoth");
 
-        for (let i = 0; i < responce.data.length; i++) {
+        for (let i = 0; i < response.data.length; i++) {
             let newColBehemoth = document.createElement("div");
             newColBehemoth.classList.add("col-sm-3");
 
@@ -90,18 +84,16 @@ fetch(
 
             newColBehemoth.innerHTML = `<div class="card"">
                     <img src="${
-                        responce.data[i].album.cover
+                        response.data[i].album.cover
                     }" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">${responce.data[i].title}</h5>
+                      <h5 class="card-title">${response.data[i].title}</h5>
                       <p class="card-text">${
-                          "This album has a duration of: " +
-                          responce.data[i].duration +
-                          " min"
+                          "Duration: " + response.data[i].duration + " min"
                       }</p>
                       <a href="${
-                          responce.data[i].link
-                      }" class="btn btn-primary">BUY NOW</a>
+                          response.data[i].link
+                      }" class="btn btn-dark">LISTEN</a>
                     </div>
                   </div>
                     `;
